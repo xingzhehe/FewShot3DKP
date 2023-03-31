@@ -4,13 +4,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title></title>
+    <title>Few-shot Geometry-Aware Keypoint Localization</title>
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/citation.css">
     <link rel="stylesheet" href="css/title.css">
 </head>
 
 <body>
+    <div class="header" id="home" style="padding-bottom: 90px;"></div>
+
+    <section class="title">
+        Few-shot Geometry-Aware Keypoint Localization
+    </section>
+
+    <section class="author">
+        <affiliation>CVPR 2023</affiliation>
+        <a href="https://xingzhehe.github.io/">Xingzhe He<sup>1</sup></a>
+        <a href="https://gauravbharaj.github.io/">Gaurav Bharaj<sup>2</sup></a>
+        <a href="https://davidcferman.github.io/">David Ferman<sup>2</sup></a>
+        <a href="https://www.cs.ubc.ca/~rhodin/web/">Helge Rhodin<sup>1</sup></a>
+        <a href="https://www.linkedin.com/in/pablo-garrido-485472169/">Pablo Garrido<sup>2</sup></a>
+        <affiliation><sup>1</sup>The University of British Columbia 
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp  
+            <sup>2</sup>Flawless AI</affiliation>
+        <a href="https://arxiv.org/pdf/2205.10636.pdf" class="links">[paper]</a>
+    </section>
+
+    <div class="header" id="abstract">Abstract</div>
+    <div class="line"></div>
+    <div class="container">
+        <p>
+            Supervised keypoint localization methods rely on large manually labeled image datasets, where objects can deform, articulate, or occlude. However, creating such large keypoint labels is time-consuming and costly, and is often error-prone due to inconsistent labeling. Thus, we desire an approach that can learn keypoint localization with fewer yet consistently annotated images. To this end, we present a novel formulation that learns to localize semantically consistent keypoint definitions, even for occluded regions, for varying object categories. We use a few user-labeled 2D images as input examples, which are extended via self-supervision using a larger unlabeled dataset. Unlike unsupervised methods, the few-shot images act as semantic shape constraints for object localization. Furthermore, we introduce 3D geometry-aware constraints to uplift keypoints, achieving more accurate 2D localization. Our general-purpose formulation paves the way for semantically conditioned generative modeling and attains competitive or state-of-the-art accuracy on several datasets, including human faces, eyes, animals, cars, and never-before-seen mouth interior (teeth) localization tasks, not attempted by the previous few-shot methods.
+        </p>
+    </div>
+
+    <div class="header" id="video">Video</div>
+    <div class="line"></div>
+    <div class="container">
+        <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" title="YouTube video player" frameborder="0" allowfullscreen></iframe> -->
+        comming soon.
+    </div>
+
+    <h1 class="header" id="results">Overview</h1>
+    <div class="line"></div>
+    <div class="container">
+        <img src="asset/overview.jpg">
+        <p>
+            Given an image, we detect the keypoints and their uncertainty. They are used to generate an edge map, which is concatenated with a randomly masked image to reconstruct the original image. The keypoints are forced to be semantically meaningful by few-shot supervision and consistent by reconstruction. The 3D geometric constraint ensures the lifted 3D keypoints meaningful. In addition, the 2D geometric constraint increases the robustness of keypoints.
+        </p>
+    </div>
+
+    <h1 class="header" id="results">Detected Keypoints, Uncertainty and 3D Representation</h1>
+    <div class="line"></div>
+    <div class="container">
+        <p>
+            With only few shots, the model learns semantically consistent and meaningful keypoints. We only use <b>10 2D annotations</b> except for tigers, where <b>20 2D annotations</b> are used.
+        </p>
+        <img src="asset/results.jpg">
+    </div>
+
+    <div class="header" id="bibtex">BibTex</div>
+    <div class="line"></div>
+
+    <section class="citation">
+        @inproceedings{he2023few,</br>
+            title={Few-shot Geometry-Aware Keypoint Localization},</br>
+            author={He, Xingzhe and Bharaj, Gaurav and Ferman, David, and Rhodin, Helge and Garrido, Pablo},</br>
+            booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},</br>
+            year={2023}</br>
+        }
+    </section>
 
 </body>
 
