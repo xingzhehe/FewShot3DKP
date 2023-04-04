@@ -29,11 +29,6 @@ video {
   max-width: 98%;
 }
 
-iframe {
-  display: block;
-  margin: auto;
-}
-
 .line {
   display: block;
   text-align: center;
